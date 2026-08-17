@@ -1,0 +1,1 @@
+const { NodeSSH } = require('node-ssh'); const ssh = new NodeSSH(); ssh.connect({host: '172.104.130.208', username: 'master-94099776', password: 'j0PhbaxkNl0ORIH', port: 2722}).then(() => ssh.execCommand('find /var/www -name "*atsolar*" 2>/dev/null; find /applications -name "*atsolar*" 2>/dev/null')).then(res => { console.log(res.stdout); ssh.dispose(); });

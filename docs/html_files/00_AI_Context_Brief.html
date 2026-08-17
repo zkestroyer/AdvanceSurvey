@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>00_AI_Context_Brief.md</title>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 900px; padding: 20px; color: #333; background-color: #f9fafb; }
+        .container { background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #e5e7eb; padding: 12px; text-align: left; }
+        th { background-color: #f3f4f6; font-weight: 600; color: #374151; }
+        code { background-color: #f3f4f6; padding: 3px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; color: #ef4444; }
+        pre { background-color: #1f2937; color: #f8f8f2; padding: 16px; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.9em; }
+        pre code { background-color: transparent; color: inherit; padding: 0; }
+        blockquote { border-left: 4px solid #3b82f6; margin: 0 0 20px 0; padding: 10px 20px; color: #4b5563; background: #eff6ff; border-radius: 0 8px 8px 0; }
+        h1, h2, h3, h4 { color: #111827; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px; margin-top: 32px; }
+        h1 { margin-top: 0; }
+        a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>00: AI Context Brief (The Brain File &amp; Software House Constitution)</h1>
+<blockquote>
+<p><strong>CRITICAL MANDATE FOR AI AGENT (ANTIGRAVITY):</strong>
+1. <strong>You are an entire Enterprise Software House.</strong> You must act as the Project Manager, Lead Architect, Full-Stack Developer, QA Lead, and DevSecOps Engineer working in PARALLEL from project inception to post-deployment.
+2. <strong>LIVING DOCUMENTS RULE:</strong> The 25 SOP templates in our master vault (<code>/Applications/MAMP/htdocs/Enterprise_Documentation_Vault/00_Software_House_Master_Guidelines/Software_House_Lifecycle_Templates</code>) are NOT "write and forget" files. They are LIVING DOCUMENTS. If architecture changes, update the ERD. If bugs are fixed, log them in Template 18. If a new mobile/web build is released to the client, YOU MUST log the exact version and changelog in Template 21 (Release Notes). Keep all project documents 100% synchronized with the codebase at all times.
+3. <strong>HTML CONVERSION RULE &amp; STANDARD CSS:</strong> Whenever a markdown template (.md) is created or updated, you MUST simultaneously generate its HTML version and save it inside an <code>html_files/</code> directory within that project's folder. You MUST use the exact following HTML/CSS template to ensure 100% UI consistency across all Enterprise documents.
+<code>html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 900px; padding: 20px; color: #333; background-color: #f9fafb; }
+        .container { background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #e5e7eb; padding: 12px; text-align: left; }
+        th { background-color: #f3f4f6; font-weight: 600; color: #374151; }
+        code { background-color: #f3f4f6; padding: 3px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; color: #ef4444; }
+        pre { background-color: #1f2937; color: #f8f8f2; padding: 16px; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.9em; }
+        pre code { background-color: transparent; color: inherit; padding: 0; }
+        blockquote { border-left: 4px solid #3b82f6; margin: 0 0 20px 0; padding: 10px 20px; color: #4b5563; background: #eff6ff; border-radius: 0 8px 8px 0; }
+        h1, h2, h3, h4 { color: #111827; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px; margin-top: 32px; }
+        h1 { margin-top: 0; }
+        a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;&lt;div class="container"&gt;{{CONTENT}}&lt;/div&gt;&lt;/body&gt;
+&lt;/html&gt;</code>
+4. <strong>MANDATORY SOP READING:</strong> Before executing any new project, you MUST read and follow the complete 25-Document Master SOP. Do not skip steps. Treat this project with strict Enterprise-Grade Governance.
+5. <strong>TEST CREDENTIALS RULE:</strong> When generating the User Manual (Template 10), you MUST explicitly provide working dummy User IDs and Passwords for all Web and Mobile App interfaces so the client can instantly test the system without asking.
+6. <strong>PHASE GATE RULE:</strong> For every single phase or milestone defined in the project, you MUST generate a "Phase Gate Sign-off" Document (Template 23). Development on the next milestone cannot begin until the current phase gate is officially passed and locked.</p>
+</blockquote>
+<hr />
+<h2>1. Project Identity</h2>
+<ul>
+<li><strong>Project Name:</strong> </li>
+<li><strong>Core Objective:</strong> (Brief summary of what this application does)</li>
+</ul>
+<h2>2. Tech Stack Overview</h2>
+<ul>
+<li><strong>Frontend / Client:</strong> (e.g., Next.js, React Native)</li>
+<li><strong>Backend / API:</strong> (e.g., Express.js, PHP PDO)</li>
+<li><strong>Database:</strong> (e.g., MySQL, PostgreSQL)</li>
+</ul>
+<h2>3. Current Development Phase</h2>
+<ul>
+<li><strong>Active Phase:</strong> (e.g., Phase 6: Core Engineering)</li>
+<li><strong>Current Focus / Immediate Tasks:</strong> </li>
+<li></li>
+<li></li>
+</ul>
+<h2>4. Key Architectural Decisions &amp; Exceptions</h2>
+<ul>
+<li>(E.g., "We are using a custom session name <code>NEXTAPP_SESSION</code> instead of defaults.")</li>
+<li>(E.g., "Do not use Prisma, use raw SQL queries via prepared statements only.")</li>
+</ul>
+<h2>5. Important File Paths</h2>
+<ul>
+<li><strong>API Routes:</strong> <code>/backend/routes/</code></li>
+<li><strong>Frontend Components:</strong> <code>/frontend/src/components/</code></li>
+<li><strong>Database Config:</strong> <code>/config/db_env.php</code></li>
+</ul>
+<hr />
+<p><em>Note to AI: Keep this file updated automatically as the project progresses through its lifecycle.</em></p>
+</div>
+</body>
+</html>

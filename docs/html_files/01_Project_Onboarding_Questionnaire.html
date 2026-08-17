@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>01_Project_Onboarding_Questionnaire.md</title>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 900px; padding: 20px; color: #333; background-color: #f9fafb; }
+        .container { background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #e5e7eb; padding: 12px; text-align: left; }
+        th { background-color: #f3f4f6; font-weight: 600; color: #374151; }
+        code { background-color: #f3f4f6; padding: 3px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; color: #ef4444; }
+        pre { background-color: #1f2937; color: #f8f8f2; padding: 16px; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.9em; }
+        pre code { background-color: transparent; color: inherit; padding: 0; }
+        blockquote { border-left: 4px solid #3b82f6; margin: 0 0 20px 0; padding: 10px 20px; color: #4b5563; background: #eff6ff; border-radius: 0 8px 8px 0; }
+        h1, h2, h3, h4 { color: #111827; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px; margin-top: 32px; }
+        h1 { margin-top: 0; }
+        a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>Next App World - Project Onboarding Questionnaire &amp; Tech Gateway</h1>
+<blockquote>
+<p><strong>CRITICAL RULE:</strong> Development (even database design) will NOT begin until Part A is 100% completed by the Business/Sales Team and Part B is completed by the Tech Team (Maani &amp; Antigravity).</p>
+</blockquote>
+<hr />
+<h2>PART A: Business &amp; Sales Questionnaire</h2>
+<p><em>(To be filled by the Sales Team in consultation with the Client)</em></p>
+<h3>1. General Overview</h3>
+<ul>
+<li><strong>Project Name:</strong> </li>
+<li><strong>Client Name / Company:</strong> </li>
+<li><strong>Core Objective:</strong> <em>(In 2-3 sentences, what is the main problem this app solves?)</em></li>
+</ul>
+<h3>2. Target Audience &amp; Platforms</h3>
+<ul>
+<li><strong>Who will use this?</strong> <em>(e.g., General Public, Internal Staff, B2B Vendors)</em></li>
+<li><strong>Which platforms are required?</strong></li>
+<li>[ ] Web Application (Desktop &amp; Mobile Browser)</li>
+<li>[ ] iOS App (Apple App Store)</li>
+<li>[ ] Android App (Google Play Store)</li>
+</ul>
+<h3>3. User Roles &amp; Features</h3>
+<ul>
+<li><strong>List all User Roles:</strong> <em>(e.g., Super Admin, Delivery Boy, Customer, Manager)</em></li>
+<li><strong>What are the top 3 absolute "Must-Have" features?</strong> </li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h3>4. Design &amp; Brand Assets</h3>
+<ul>
+<li><strong>Do we have a Brand Book?</strong> <em>(Logo, exact Color Codes, Fonts)</em> [ ] Yes [ ] No</li>
+<li><strong>Competitor References:</strong> <em>(Provide 2 links to apps/websites the client likes)</em></li>
+</ul>
+<h3>5. Third-Party Integrations &amp; Accounts</h3>
+<p><em>Does the system need to connect to outside services? If yes, the client must provide accounts/keys before development.</em>
+- [ ] Payment Gateway (Stripe, PayPal, Local Banks)
+- [ ] SMS OTP (Twilio, local provider)
+- [ ] Maps/Location (Google Maps API)
+- [ ] Push Notifications (Firebase)
+- [ ] Apple Developer / Google Play Console Accounts (For Mobile)</p>
+<h3>6. Scalability &amp; Expected Traffic</h3>
+<p><em>Helps the engineering team decide server infrastructure and code architecture.</em>
+- <strong>Expected Daily Active Users (DAU) at Launch:</strong> 
+- <strong>Traffic Growth Forecast (1-3 Years):</strong> <em>(e.g., 10k users initially, expecting 500k in 3 years)</em>
+- <strong>Data Volume Expectations:</strong> <em>(e.g., Heavy video uploads, large datasets, or simple text data?)</em></p>
+<h3>7. Timeline &amp; Deliverables</h3>
+<ul>
+<li><strong>Expected Launch Date:</strong> </li>
+<li><strong>Agile Agreement:</strong> <em>(Has the client been informed that progress will be shown bi-weekly on a demo server?)</em> [ ] Yes [ ] No</li>
+</ul>
+<hr />
+<h2>PART B: Technical Architecture Checklist</h2>
+<p><em>(To be filled by Solution Architect before writing the first line of code)</em></p>
+<h3>1. Technology Stack Selection</h3>
+<ul>
+<li><strong>Frontend / Mobile:</strong> <em>(e.g., Next.js, Flutter)</em></li>
+<li><strong>Backend:</strong> <em>(e.g., Node.js Express, PHP PDO)</em></li>
+<li><strong>Database:</strong> <em>(e.g., PostgreSQL, MySQL, MongoDB)</em></li>
+<li><strong>Admin Dashboard UI:</strong> <em>(e.g., Tabler.io)</em></li>
+</ul>
+<h3>2. Infrastructure Setup</h3>
+<ul>
+<li><strong>Demo Server Provisioned:</strong> [ ] Yes</li>
+<li><strong>Live Server Provisioned:</strong> [ ] Yes</li>
+<li><strong>Domains/Subdomains configured via Cloudflare/Nginx:</strong> [ ] Yes</li>
+</ul>
+<h3>3. Architecture &amp; Security Patterns</h3>
+<ul>
+<li><strong>API Standard:</strong> <em>(e.g., RESTful JSON)</em></li>
+<li><strong>Authentication:</strong> <em>(e.g., JWT in HttpOnly cookies, OAuth)</em></li>
+<li><strong>State Management (Mobile):</strong> <em>(e.g., BLoC, Provider)</em></li>
+<li><strong>E2E Testing Pipeline:</strong> <em>(Playwright setup complete)</em></li>
+</ul>
+<hr />
+<p><strong>Sign-off:</strong>
+Once Part A and Part B are checked off, the "Black Box" is opened, and Antigravity begins coding.</p>
+</div>
+</body>
+</html>

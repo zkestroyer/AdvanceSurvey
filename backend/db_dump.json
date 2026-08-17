@@ -1,0 +1,214 @@
+[
+  {
+    "id": 10,
+    "templateId": 4,
+    "title": "Outlet Details",
+    "orderIndex": 0,
+    "createdAt": "2026-06-24T13:51:44.489Z",
+    "questions": [
+      {
+        "id": 38,
+        "sectionId": 10,
+        "questionText": "Name of Outlet",
+        "type": "text",
+        "options": null,
+        "isRequired": true,
+        "orderIndex": 0,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      },
+      {
+        "id": 39,
+        "sectionId": 10,
+        "questionText": "Address",
+        "type": "text",
+        "options": null,
+        "isRequired": true,
+        "orderIndex": 1,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      },
+      {
+        "id": 40,
+        "sectionId": 10,
+        "questionText": "City / Town",
+        "type": "text",
+        "options": null,
+        "isRequired": true,
+        "orderIndex": 2,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      },
+      {
+        "id": 41,
+        "sectionId": 10,
+        "questionText": "Contact Person",
+        "type": "text",
+        "options": null,
+        "isRequired": true,
+        "orderIndex": 3,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      },
+      {
+        "id": 42,
+        "sectionId": 10,
+        "questionText": "Contact No(s)",
+        "type": "number",
+        "options": null,
+        "isRequired": true,
+        "orderIndex": 4,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      },
+      {
+        "id": 43,
+        "sectionId": 10,
+        "questionText": "Type",
+        "type": "dropdown",
+        "options": "[\"Importer\",\"Distributor\",\"Dealer\",\"Wholesaler\",\"Retailer\"]",
+        "isRequired": true,
+        "orderIndex": 5,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      },
+      {
+        "id": 44,
+        "sectionId": 10,
+        "questionText": "Classification",
+        "type": "dropdown",
+        "options": "[\"Large\",\"Medium\",\"Small\"]",
+        "isRequired": true,
+        "orderIndex": 6,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "templateId": 4,
+    "title": "Sourcing & Payment Terms",
+    "orderIndex": 1,
+    "createdAt": "2026-06-24T13:51:44.492Z",
+    "questions": [
+      {
+        "id": 45,
+        "sectionId": 11,
+        "questionText": "Source of Buying (Name of Dealer/Wholesaler/Distributor)",
+        "type": "text",
+        "options": null,
+        "isRequired": true,
+        "orderIndex": 0,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      },
+      {
+        "id": 46,
+        "sectionId": 11,
+        "questionText": "Payment Terms",
+        "type": "dropdown",
+        "options": "[\"100% ADVANCE\",\"PART ADVANCE & PART COD\",\"100% COD\",\"PART ADVANCE & PART CREDIT\",\"100% CREDIT\",\"CASH PURCHASE\"]",
+        "isRequired": true,
+        "orderIndex": 1,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      },
+      {
+        "id": 47,
+        "sectionId": 11,
+        "questionText": "Logistics",
+        "type": "radio",
+        "options": "[\"OWN\",\"SOURCE\"]",
+        "isRequired": true,
+        "orderIndex": 2,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "templateId": 4,
+    "title": "Incentives & Programs",
+    "orderIndex": 2,
+    "createdAt": "2026-06-24T13:51:44.495Z",
+    "questions": [
+      {
+        "id": 48,
+        "sectionId": 12,
+        "questionText": "Incentives / Commissions / Discounts",
+        "type": "dropdown",
+        "options": "[\"TIMELY PAYMENT BASED\",\"GIFT CARDS FOR NEW CUSTOMER\",\"SPECIAL DEALER / WHOLESALE/ DISTRIBUTOR DISCOUNT ON VOLUME BUYING\",\"PERFORMANCE BASED REBATES\",\"SPECIAL SEASON INCENTIVE\",\"SALES VOLUME BONUSES\",\"PRODUCT SPECIFIC REWARD\"]",
+        "isRequired": false,
+        "orderIndex": 0,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      },
+      {
+        "id": 49,
+        "sectionId": 12,
+        "questionText": "Dealers Recognition Programs (Certificates)",
+        "type": "radio",
+        "options": "[\"Yes\",\"No\"]",
+        "isRequired": false,
+        "orderIndex": 1,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      },
+      {
+        "id": 50,
+        "sectionId": 12,
+        "questionText": "Yearly Foreign Trips",
+        "type": "radio",
+        "options": "[\"Yes\",\"No\"]",
+        "isRequired": false,
+        "orderIndex": 2,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      },
+      {
+        "id": 51,
+        "sectionId": 12,
+        "questionText": "Loyalty / Dealer Contests Programe",
+        "type": "radio",
+        "options": "[\"Yes\",\"No\"]",
+        "isRequired": false,
+        "orderIndex": 3,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "templateId": 4,
+    "title": "itel Brand Perception",
+    "orderIndex": 3,
+    "createdAt": "2026-06-24T13:51:44.498Z",
+    "questions": [
+      {
+        "id": 52,
+        "sectionId": 13,
+        "questionText": "Reason for Unavailability of itel Brand",
+        "type": "dropdown",
+        "options": "[\"PRICE\",\"MARGINS\",\"QUALITY\",\"CAMPATABILITY\",\"WARRANTY\",\"NO SERVICE\",\"PAYMENT ISSUES\",\"BRAND AWARENESS\",\"CONSUMER DEMANDS\",\"BRAND EQUITY\",\"LACK OF MARKETING COMPGAINS\",\"DISCOUNTS / COMMISIONS\"]",
+        "isRequired": false,
+        "orderIndex": 0,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      },
+      {
+        "id": 53,
+        "sectionId": 13,
+        "questionText": "Willingness to keep itel as",
+        "type": "dropdown",
+        "options": "[\"DISTRIBUTOR\",\"DEALER\",\"WHOLSALER\"]",
+        "isRequired": true,
+        "orderIndex": 1,
+        "parentQuestionId": null,
+        "showIfParentValue": null
+      }
+    ]
+  }
+]

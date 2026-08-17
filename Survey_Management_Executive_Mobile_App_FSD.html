@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Survey Management / Executive Mobile Application - FSD</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f6f9;color:#222;line-height:1.6;margin:0}
+.container{max-width:1100px;margin:auto;background:#fff;padding:40px}
+h1{color:#0b4f8a;border-bottom:3px solid #0b4f8a;padding-bottom:8px}
+h2{background:#0b4f8a;color:#fff;padding:10px;border-radius:6px}
+h3{color:#0b4f8a;margin-top:25px}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #ccc;padding:10px;text-align:left}
+th{background:#e9f2fb}
+ul{margin-top:6px}
+.card{background:#f8fafc;border-left:4px solid #0b4f8a;padding:12px 16px;margin:12px 0}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Functional Specification Document (FSD)<br>Survey Management / Executive Mobile Application</h1>
+
+<h2>1. Overview</h2>
+<p>The Survey Management Mobile Application shall be developed for Executive Management, Regional Managers, Sales Heads and other authorized management users to monitor survey activities, compare market intelligence, analyze product performance and make business decisions directly from their mobile devices.</p>
+<p>Unlike the Survey App used by field staff for data collection, the Management App shall be a read-only analytical application providing dashboards, reports, comparisons and business insights.</p>
+
+<h2>2. Login</h2>
+<div class="card">
+<h3>Screen: Login</h3>
+<b>Fields</b>
+<ul><li>Username / Email</li><li>Password</li><li>Remember Me</li><li>Forgot Password</li></ul>
+<b>Buttons</b>
+<ul><li>Login</li></ul>
+</div>
+
+<h2>3. Dashboard</h2>
+<p>The Dashboard shall provide an executive summary of the complete survey operations.</p>
+
+<h3>Dashboard Cards</h3>
+
+<div class="card"><b>Survey Summary</b><ul><li>Total Surveys</li><li>Today's Surveys</li><li>This Week Surveys</li><li>This Month Surveys</li></ul></div>
+
+<div class="card"><b>Shop Summary</b><ul><li>Total Shops</li><li>Newly Added Shops</li><li>Active Shops</li><li>Inactive Shops</li></ul></div>
+
+<div class="card"><b>Users</b><ul><li>Total Surveyors</li><li>Active Today</li><li>Inactive Today</li></ul></div>
+
+<div class="card"><b>Geographic Coverage</b><ul><li>Territories Covered</li><li>Cities Covered</li><li>Areas Covered</li></ul></div>
+
+<div class="card"><b>Product Insights</b><ul><li>Total Categories</li><li>Total Brands</li><li>Total Products</li><li>Total Distributors</li></ul></div>
+
+<div class="card"><b>Market Intelligence</b><ul><li>Highest Purchase Price Product</li><li>Lowest Purchase Price Product</li><li>Highest Selling Price Product</li><li>Lowest Selling Price Product</li></ul></div>
+
+<div class="card"><b>Price Monitoring</b><ul><li>Products with Price Increase</li><li>Products with Price Decrease</li><li>Stable Prices</li></ul></div>
+
+<div class="card"><b>Survey Quality</b><ul><li>Completed Surveys</li><li>Pending Surveys</li><li>Rejected Surveys (if applicable)</li></ul></div>
+
+<h3>Dashboard Charts</h3>
+<ul>
+<li>Survey Trend (Daily Survey Count)</li>
+<li>Territory Performance (Survey Count by Territory)</li>
+<li>Brand Distribution (Survey Count by Brand)</li>
+<li>Category Distribution (Survey Count by Category)</li>
+<li>Price Trend (Average Purchase Price Trend / Average Selling Price Trend)</li>
+<li>Distributor Coverage (Survey Count by Distributor)</li>
+</ul>
+
+<h3>Dashboard Filters</h3>
+<ul>
+<li>Date Range</li><li>Territory</li><li>City</li><li>Area</li><li>Surveyor</li><li>Brand</li><li>Category</li><li>Distributor</li>
+</ul>
+
+<h2>4. Survey Reports</h2>
+<h3>Filters</h3>
+<ul><li>Date Range</li><li>Surveyor</li><li>Territory</li><li>City</li><li>Area</li><li>Shop</li><li>Distributor</li><li>Category</li><li>Brand</li><li>Product</li></ul>
+
+<h3>Survey List Fields</h3>
+<ul><li>Survey ID</li><li>Shop Name</li><li>Surveyor</li><li>Date</li><li>Territory</li><li>City</li><li>Total Products Surveyed</li></ul>
+<p>Selecting a survey shall open complete survey details.</p>
+
+<h2>5. Survey Detail</h2>
+<h3>Shop Information</h3>
+<ul><li>Shop Name</li><li>Owner Name</li><li>Contact Number</li><li>Territory</li><li>City</li><li>Area</li><li>Distributor</li></ul>
+
+<h3>Survey Information</h3>
+<ul><li>Survey Date</li><li>Surveyor</li><li>Survey Type</li></ul>
+
+<h3>Products Surveyed</h3>
+<ul><li>Category</li><li>Brand</li><li>Product Name</li><li>Purchase Price</li><li>Selling Price</li><li>Warranty</li><li>IP Rating</li><li>Capacity</li><li>Energy Rating</li><li>Quantity</li><li>Images</li><li>Notes</li></ul>
+
+<h2>6. Shop Reports</h2>
+<ul><li>Total Shops</li><li>Shops Added Today</li><li>Shops Added This Month</li></ul>
+<h3>Shop List</h3>
+<ul><li>Shop Name</li><li>Territory</li><li>City</li><li>Area</li><li>Distributor</li><li>Total Surveys</li><li>Last Survey Date</li></ul>
+
+<h2>7. User Performance</h2>
+<ul><li>Total Surveyors</li><li>Active Surveyors</li><li>Inactive Surveyors</li><li>Average Surveys per Day</li></ul>
+<h3>User List</h3>
+<ul><li>Employee Name</li><li>Territory</li><li>Total Surveys</li><li>Shops Added</li><li>Last Activity</li></ul>
+<p>User details: Daily Surveys, Weekly Surveys, Monthly Surveys, Survey Locations, Assigned Territory.</p>
+
+<h2>8. Territory Performance</h2>
+<ul><li>Total Territories</li><li>Highest Performing Territory</li><li>Lowest Performing Territory</li></ul>
+<p>Details: Survey Count, Shop Count, Brand Coverage, Product Coverage, Average Purchase Price, Average Selling Price.</p>
+<p>Charts: Territory Wise Survey Trend, Territory Wise Product Distribution.</p>
+
+<h2>9. Price Monitoring</h2>
+<ul><li>Average Purchase Price</li><li>Average Selling Price</li><li>Highest Price</li><li>Lowest Price</li></ul>
+<p>Filters: Category, Brand, Product, Territory, Distributor, Date Range.</p>
+<table>
+<tr><th>Category</th><th>Brand</th><th>Product</th><th>Purchase Price</th><th>Selling Price</th><th>Difference</th><th>Last Updated</th></tr>
+</table>
+<p>Selecting a product shall display complete price history.</p>
+
+<h2>10. Price History</h2>
+<p>Filters: Category, Brand, Product, Territory, Shop, Date Range.</p>
+<ul><li>Current Purchase Price</li><li>Current Selling Price</li><li>Previous Purchase Price</li><li>Previous Selling Price</li><li>Difference</li><li>Percentage Increase/Decrease</li><li>Effective Date</li></ul>
+<p>Charts: Purchase Price Timeline, Selling Price Timeline.</p>
+
+<h2>11. Comparison Reports</h2>
+<p>The Comparison Reports module shall allow management users to perform dynamic market comparisons directly from the mobile application. The same comparison engine available in the Web Portal shall also be available within the mobile application.</p>
+
+<h3>Filters</h3>
+<ul><li>Product Category</li><li>Brand</li><li>Product</li><li>Distributor</li><li>Warranty</li><li>IP Rating</li><li>Capacity</li><li>Energy Rating</li><li>Territory</li><li>City</li><li>Area</li><li>Date Range</li><li>Survey Type</li><li>Any configurable survey field</li></ul>
+
+<h3>Comparison Types</h3>
+<ul><li>Products</li><li>Brands</li><li>Distributors</li><li>Purchase Prices</li><li>Selling Prices</li><li>Territories</li><li>Cities</li><li>Product Categories</li><li>Any configurable survey field</li></ul>
+
+<p><b>Views:</b> Card View, Table View, Graph View</p>
+
+<h3>Comparison Cards</h3>
+<ul><li>Total Shops</li><li>Average Purchase Price</li><li>Average Selling Price</li><li>Highest Price</li><li>Lowest Price</li><li>Maximum Coverage</li><li>Minimum Coverage</li></ul>
+
+<h3>Example - Product Comparison</h3>
+<table>
+<tr><th>Brand</th><th>Purchase Price</th><th>Shop Count</th></tr>
+<tr><td>Longi</td><td>Rs. 27,500</td><td>245</td></tr>
+<tr><td>JA Solar</td><td>Rs. 26,900</td><td>198</td></tr>
+</table>
+
+<h3>Distributor Comparison</h3>
+<table>
+<tr><th>Distributor</th><th>Shop Count</th></tr>
+<tr><td>Distributor A</td><td>250</td></tr>
+<tr><td>Distributor B</td><td>180</td></tr>
+<tr><td>Distributor C</td><td>95</td></tr>
+</table>
+
+<h3>Territory Comparison</h3>
+<table>
+<tr><th>Territory</th><th>Surveys</th><th>Shops</th><th>Avg Purchase Price</th></tr>
+<tr><td>Karachi</td><td>420</td><td>250</td><td>Rs.27,500</td></tr>
+<tr><td>Lahore</td><td>385</td><td>215</td><td>Rs.27,150</td></tr>
+</table>
+
+<h3>Brand Comparison</h3>
+<table>
+<tr><th>Brand</th><th>Shops</th><th>Avg Selling Price</th></tr>
+<tr><td>Longi</td><td>520</td><td>Rs.28,600</td></tr>
+<tr><td>JA Solar</td><td>480</td><td>Rs.28,050</td></tr>
+</table>
+
+<h3>Available Actions</h3>
+<ul><li>Sort Highest to Lowest</li><li>Sort Lowest to Highest</li><li>Apply Filters</li><li>View Charts</li><li>View Tables</li><li>Drill-down into Survey Records</li><li>Open Shop Details</li><li>Open Product History</li></ul>
+
+<h3>Historical Comparison</h3>
+<ul><li>Historical Purchase Price</li><li>Historical Selling Price</li><li>Current Purchase Price</li><li>Current Selling Price</li><li>Price Difference</li><li>Percentage Difference</li><li>Price Change Timeline</li><li>Effective Date</li><li>Shop Count</li></ul>
+
+<h2>12. Notifications</h2>
+<ul><li>Daily Survey Completion Summary</li><li>New Survey Submitted</li><li>Significant Price Increase Alert</li><li>Significant Price Decrease Alert</li><li>New Shop Added</li><li>Survey Target Achieved</li></ul>
+
+<h2>13. Profile</h2>
+<ul><li>Name</li><li>Designation</li><li>Email</li><li>Phone</li><li>Territory</li><li>Profile Picture</li></ul>
+<p>Actions: Change Password, Logout.</p>
+
+<h2>14. Mobile Navigation</h2>
+<ul><li>Dashboard</li><li>Reports</li><li>Comparison</li><li>Notifications</li><li>Profile</li></ul>
+
+<h2>15. Permissions</h2>
+<p><b>Management users shall have read-only access.</b></p>
+<ul>
+<li>View all surveys</li><li>View all reports</li><li>View dashboards</li><li>View comparisons</li><li>View graphs</li><li>View price history</li><li>View shop details</li><li>Drill down into survey records</li>
+</ul>
+<p><b>Management users shall not be allowed to:</b></p>
+<ul><li>Create surveys</li><li>Edit surveys</li><li>Delete surveys</li><li>Add shops</li><li>Modify product data</li><li>Submit survey responses</li></ul>
+
+<h2>Summary of Main Screens</h2>
+<ol>
+<li>Login</li><li>Dashboard</li><li>Survey Reports</li><li>Survey Detail</li><li>Shop Reports</li><li>Shop Detail</li><li>User Performance</li><li>Territory Performance</li><li>Price Monitoring</li><li>Price History</li><li>Comparison Reports</li><li>Notifications</li><li>Profile</li>
+</ol>
+
+<p>This structure keeps the Management App aligned with the existing Survey Mobile App and Web Portal while focusing on executive reporting, analytics, drill-down capabilities, and the complete Comparison Engine across both mobile and web.</p>
+
+</div></body></html>

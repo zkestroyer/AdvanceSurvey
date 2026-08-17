@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Reports - Functional Requirements</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 30px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 32px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+            color: #1f2937;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 24px;
+            color: #374151;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        ul {
+            margin-top: 8px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0 20px;
+        }
+
+        th, td {
+            border: 1px solid #cfd4dc;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f3f4f6;
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) td {
+            background: #fafafa;
+        }
+
+        .example-label {
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Comparison Reports</h1>
+
+    <p>
+        A dedicated <strong>Comparison Reports</strong> module shall be developed within the Web Portal.
+    </p>
+
+    <h2>1. Comparison Report Filters</h2>
+
+    <p>The Comparison Reports module shall support the following filters:</p>
+
+    <ul>
+        <li>Product Category</li>
+        <li>Brand</li>
+        <li>Product</li>
+        <li>Distributor</li>
+        <li>Warranty</li>
+        <li>IP Rating</li>
+        <li>Capacity</li>
+        <li>Energy</li>
+        <li>Territory</li>
+        <li>City</li>
+        <li>Area</li>
+        <li>Date Range</li>
+        <li>Survey Type</li>
+        <li>Any future configurable survey field</li>
+    </ul>
+
+    <h2>2. Comparison Examples</h2>
+
+    <h3>2.1 Distributor Comparison</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Distributor</th>
+                <th>Shop Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Distributor A</td>
+                <td>250</td>
+            </tr>
+            <tr>
+                <td>Distributor B</td>
+                <td>180</td>
+            </tr>
+            <tr>
+                <td>Distributor C</td>
+                <td>95</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>2.2 Product Price Comparison</h3>
+
+    <p><strong>Category:</strong> Solar</p>
+    <p><strong>Brand:</strong> Longi vs JA Solar</p>
+    <p><strong>Product:</strong> LR5</p>
+    <p><strong>Comparison Factor:</strong> Purchase Price</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Purchase Price</th>
+                <th>Shop Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Longi</td>
+                <td>Rs. 27,500</td>
+                <td>245 Shops</td>
+            </tr>
+            <tr>
+                <td>JA Solar</td>
+                <td>Rs. 26,900</td>
+                <td>198 Shops</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>The Product Price Comparison shall support:</p>
+
+    <ul>
+        <li>Compare Purchase Prices side-by-side.</li>
+        <li>View Shop Count.</li>
+        <li>Sort Highest to Lowest / Lowest to Highest.</li>
+        <li>Drill down to survey records.</li>
+    </ul>
+
+    <h2>3. Price History</h2>
+
+    <p>The system shall maintain and display the following pricing information:</p>
+
+    <ul>
+        <li>Historical Purchase Prices</li>
+        <li>Historical Selling Prices</li>
+        <li>Current Purchase Price</li>
+        <li>Current Selling Price</li>
+        <li>Price Difference</li>
+        <li>Price Change Timeline</li>
+        <li>Effective Date</li>
+    </ul>
+
+    <h2>4. Comparison Engine</h2>
+
+    <p>
+        Management users shall be able to perform the same dynamic comparisons described in Section 5 from both the Web Portal and the Mobile Application.
+    </p>
+
+    <p>The Comparison Engine shall support:</p>
+
+    <ul>
+        <li>Compare Products</li>
+        <li>Compare Brands</li>
+        <li>Compare Distributors</li>
+        <li>Compare Purchase Prices</li>
+        <li>Compare Selling Prices</li>
+        <li>Compare Territories</li>
+        <li>Compare Cities</li>
+        <li>Compare Product Categories</li>
+        <li>Compare any configurable survey field</li>
+    </ul>
+
+    <h2>5. Comparison Results</h2>
+
+    <p>
+        The comparison results shall support the following capabilities:
+    </p>
+
+    <ul>
+        <li>Highest/Lowest sorting</li>
+        <li>Graphical View</li>
+        <li>Tabular View</li>
+        <li>Drill-down into survey records</li>
+        <li>Historical Pricing Timeline</li>
+        <li>Historical Price Comparison</li>
+        <li>Shop Count</li>
+    </ul>
+
+</body>
+</html>

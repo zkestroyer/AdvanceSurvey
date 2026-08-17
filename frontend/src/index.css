@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-base: var(--bg-base);
+  --color-text-main: var(--text-primary);
+  --color-text-sub: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-panel-bg: var(--panel-bg);
+  --color-panel-solid: var(--panel-bg-solid);
+  --color-panel-border: var(--panel-border);
+  --color-danger-bg: var(--danger-bg);
+  --color-danger-text: var(--danger-text);
+  --color-danger-border: var(--danger-border);
+  --color-success-bg: var(--success-bg);
+  --color-success-text: var(--success-text);
+  --color-success-border: var(--success-border);
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-text: var(--warning-text);
+  --color-warning-border: var(--warning-border);
+}
+
+:root {
+  /* Brand Colors - Minimalist */
+  --primary-brand: #334155; /* Slate 700 */
+  --secondary-accent: #0f172a; /* Slate 900 */
+  
+  /* Light Theme Variables */
+  --bg-base: #f8fafc; /* Slate 50 */
+  
+  /* Replace glass with solid/minimal flat borders */
+  --glass-bg: #ffffff;
+  --glass-bg-hover: #ffffff;
+  --glass-border: #e2e8f0;
+  --glass-border-hover: #cbd5e1;
+  --glass-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --glass-shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  
+  --table-header-bg: #f8fafc;
+  --table-border: #e2e8f0;
+  --table-hover-bg: #f1f5f9;
+  
+  --text-primary: #0f172a; /* Deep Slate 900 */
+  --text-secondary: #334155; /* Slate 700 */
+  --text-muted: #64748b; /* Slate 500 */
+  --text-inverse: #ffffff;
+  
+  --panel-bg: #ffffff;
+  --panel-bg-solid: #ffffff;
+  --panel-border: #e2e8f0;
+  
+  --danger-bg: #fef2f2;
+  --danger-text: #dc2626;
+  --danger-border: #fecaca;
+  
+  --success-bg: #f0fdf4;
+  --success-text: #16a34a;
+  --success-border: #bbf7d0;
+  
+  --warning-bg: #fffbeb;
+  --warning-text: #d97706;
+  --warning-border: #fde68a;
+  
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+}
+
+.dark {
+  /* Dark Theme Variables */
+  --primary-brand: #cbd5e1; 
+  --secondary-accent: #f8fafc; 
+  
+  --bg-base: #0f172a; /* Slate 900 */
+  
+  --glass-bg: #1e293b;
+  --glass-bg-hover: #1e293b;
+  --glass-border: #334155;
+  --glass-border-hover: #475569;
+  --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --glass-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  
+  --input-bg: #0f172a;
+  --input-border: #334155;
+  
+  --table-header-bg: #0f172a;
+  --table-border: #334155;
+  --table-hover-bg: #1e293b;
+  
+  --text-primary: #f8fafc; /* Slate 50 */
+  --text-secondary: #cbd5e1; /* Slate 300 */
+  --text-muted: #94a3b8; /* Slate 400 */
+  --text-inverse: #0f172a;
+  
+  --panel-bg: #1e293b;
+  --panel-bg-solid: #1e293b;
+  --panel-border: #334155;
+  
+  --danger-bg: #7f1d1d;
+  --danger-text: #fca5a5;
+  --danger-border: #991b1b;
+  
+  --success-bg: #14532d;
+  --success-text: #86efac;
+  --success-border: #166534;
+  
+  --warning-bg: #78350f;
+  --warning-text: #fcd34d;
+  --warning-border: #92400e;
+  
+  --scrollbar-thumb: #334155;
+  --scrollbar-thumb-hover: #475569;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-base);
+  /* Removed heavy gradients to keep it simple, neat, and decent */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em; /* International clean standard */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Redefined Glass Utilities to Flat Clean Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 0.5rem; /* Less rounded, more professional */
+  transition: all 0.2s ease;
+}
+.glass-panel:hover {
+  box-shadow: var(--glass-shadow-hover);
+  border-color: var(--glass-border-hover);
+}
+
+.glass-button {
+  background: var(--primary-brand);
+  border: 1px solid transparent;
+  color: #ffffff; 
+  font-weight: 500;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.glass-button:hover {
+  background: var(--secondary-accent);
+}
+
+.glass-input {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text-primary);
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+.glass-input:focus {
+  outline: none;
+  border-color: var(--primary-brand);
+  box-shadow: 0 0 0 1px var(--primary-brand);
+}
+
+.glass-table th {
+  background: var(--table-header-bg);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--table-border);
+}
+.glass-table tr {
+  border-bottom: 1px solid var(--table-border);
+  transition: background 0.1s ease;
+}
+.glass-table tr:hover {
+  background: var(--table-hover-bg);
+}

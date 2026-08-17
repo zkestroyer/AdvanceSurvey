@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>16_Performance_Load_Testing.md</title>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 900px; padding: 20px; color: #333; background-color: #f9fafb; }
+        .container { background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #e5e7eb; padding: 12px; text-align: left; }
+        th { background-color: #f3f4f6; font-weight: 600; color: #374151; }
+        code { background-color: #f3f4f6; padding: 3px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; color: #ef4444; }
+        pre { background-color: #1f2937; color: #f8f8f2; padding: 16px; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.9em; }
+        pre code { background-color: transparent; color: inherit; padding: 0; }
+        blockquote { border-left: 4px solid #3b82f6; margin: 0 0 20px 0; padding: 10px 20px; color: #4b5563; background: #eff6ff; border-radius: 0 8px 8px 0; }
+        h1, h2, h3, h4 { color: #111827; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px; margin-top: 32px; }
+        h1 { margin-top: 0; }
+        a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>Performance &amp; Load Testing Report</h1>
+<h2>1. Test Information</h2>
+<ul>
+<li><strong>Project Name:</strong> </li>
+<li><strong>Date of Test:</strong> </li>
+<li><strong>Tools Used:</strong> (e.g., Apache JMeter, K6, Artillery)</li>
+<li><strong>Target Environment:</strong> (e.g., Pre-production/Staging)</li>
+</ul>
+<h2>2. Test Objectives &amp; Scenarios</h2>
+<ul>
+<li><strong>Objective:</strong> Verify if the system can handle X concurrent users without degradation.</li>
+<li><strong>Scenario 1:</strong> X users logging in simultaneously over a 5-minute ramp-up.</li>
+<li><strong>Scenario 2:</strong> X users performing a heavy transaction (e.g., generating a report).</li>
+</ul>
+<h2>3. Key Metrics &amp; Benchmarks</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target (SLA)</th>
+<th>Actual Result</th>
+<th>Status (Pass/Fail)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Average Response Time</td>
+<td>&lt; 500ms</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>95th Percentile Response Time</td>
+<td>&lt; 800ms</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Error Rate</td>
+<td>&lt; 1%</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Max Concurrent Users Supported</td>
+<td>5000+</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CPU / Memory Utilization</td>
+<td>&lt; 70%</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>4. Identified Bottlenecks</h2>
+<ul>
+<li>(e.g., Database query X is taking 2 seconds under load)</li>
+<li>(e.g., Nginx worker connections exhausted)</li>
+</ul>
+<h2>5. Optimization Recommendations</h2>
+<ul>
+<li>[ ] Add caching (Redis/Memcached) for query X.</li>
+<li>[ ] Increase database connection pool size.</li>
+<li>[ ] Implement CDN for static assets.</li>
+</ul>
+<h2>6. Sign-off</h2>
+<ul>
+<li><strong>Performance Engineer:</strong> <strong><em>_</em></strong>_</li>
+<li><strong>Technical Lead:</strong> <strong><em>_</em></strong>_</li>
+</ul>
+</div>
+</body>
+</html>

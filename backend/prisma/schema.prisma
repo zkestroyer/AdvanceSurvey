@@ -1,0 +1,287 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+}
+
+model User {
+  id               Int      @id @default(autoincrement())
+  email            String   @unique
+  password         String
+  name             String
+  roleId           Int
+  territoryId      Int?
+  resetToken       String?
+  resetTokenExpiry DateTime?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  employeeId       String?
+  mobileNumber     String?
+  designation      String?
+  department       String?
+  cnic             String?
+  deviceImei       String?
+  deviceType       String?
+  status           String   @default("Active")
+  assignedBdmId    Int?
+
+  dashboardAccess  Boolean  @default(false)
+  reportAccess     Boolean  @default(false)
+  modulePermissions String? @db.Text
+  menuPermissions   String? @db.Text
+  exportPermission  Boolean @default(false)
+  regionAccess      String? @db.Text
+  territoryAccess   String? @db.Text
+
+  role      Role     @relation(fields: [roleId], references: [id])
+  territory Territory? @relation(fields: [territoryId], references: [id])
+  assignedBdm User?    @relation("BdmToTso", fields: [assignedBdmId], references: [id])
+  assignedTsos User[]  @relation("BdmToTso")
+  checkIns  CheckIn[]
+  responses SurveyResponse[]
+  notifications UserNotification[]
+}
+
+model Role {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  permissions String   @db.Text // JSON string of permissions
+  users       User[]
+}
+
+model Territory {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  region      String   @db.Text
+  users       User[]
+  shops       Shop[]
+}
+
+model Shop {
+  id          Int      @id @default(autoincrement())
+  name        String
+  ownerName   String?
+  contactNo   String?
+  address     String?
+  city        String?
+  area        String?
+  latitude    Float?
+  longitude   Float?
+  type        String?  // Importer, Distributor, Dealer, Wholesaler, Retailer
+  classification String? // Large, Medium, Small
+  territoryId Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  territory   Territory @relation(fields: [territoryId], references: [id])
+  checkIns    CheckIn[]
+  responses   SurveyResponse[]
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  category    String
+  brand       String?
+  model       String?
+  warranty    String?
+  price       Float
+  isActive    Boolean  @default(true)
+}
+
+model Competitor {
+  id              Int      @id @default(autoincrement())
+  name            String   @unique
+  flagshipProduct String?
+  price           Float?
+  threatLevel     String?
+  marketShare     Float?
+}
+
+model SurveyTemplate {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  sections    SurveySection[]
+  responses   SurveyResponse[]
+}
+
+model SurveySection {
+  id           Int      @id @default(autoincrement())
+  templateId   Int
+  title        String
+  orderIndex   Int
+  isRepeatable Boolean  @default(false)
+  createdAt    DateTime @default(now())
+
+  template    SurveyTemplate   @relation(fields: [templateId], references: [id], onDelete: Cascade)
+  questions   SurveyQuestion[]
+}
+
+model SurveyQuestion {
+  id                 Int      @id @default(autoincrement())
+  sectionId          Int
+  questionText       String
+  type               String   // text, radio, dropdown, checkbox
+  options            String?  @db.Text // JSON array of options
+  isRequired         Boolean  @default(false)
+  orderIndex         Int
+  parentQuestionId   Int?     // For conditional logic
+  showIfParentValue  String?  // Value that parent must have to show this question
+
+  section            SurveySection    @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  parentQuestion     SurveyQuestion?  @relation("ParentChild", fields: [parentQuestionId], references: [id])
+  childQuestions     SurveyQuestion[] @relation("ParentChild")
+  answers            SurveyAnswer[]
+}
+
+model SurveyResponse {
+  id          Int      @id @default(autoincrement())
+  templateId  Int
+  shopId      Int
+  userId      Int
+  status      String   @default("draft") // draft, completed
+  startedAt   DateTime @default(now())
+  completedAt DateTime?
+  photoProofs String?  @db.LongText
+  checkoutLat Float?
+  checkoutLng Float?
+  feedback    String?  @db.Text
+
+  template    SurveyTemplate @relation(fields: [templateId], references: [id])
+  shop        Shop           @relation(fields: [shopId], references: [id])
+  user        User           @relation(fields: [userId], references: [id])
+  answers     SurveyAnswer[]
+}
+
+model SurveyAnswer {
+  id          Int      @id @default(autoincrement())
+  responseId  Int
+  questionId  Int
+  value       String?  @db.Text
+  repeatIndex Int      @default(0)
+
+  response    SurveyResponse @relation(fields: [responseId], references: [id], onDelete: Cascade)
+  question    SurveyQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+}
+
+model CheckIn {
+  id          Int      @id @default(autoincrement())
+  shopId      Int
+  userId      Int
+  latitude    Float
+  longitude   Float
+  timestamp   DateTime @default(now())
+
+  shop        Shop     @relation(fields: [shopId], references: [id])
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+model SupportTicket {
+  id          Int      @id @default(autoincrement())
+  subject     String
+  message     String?  @db.Text
+  photo       String?  @db.LongText
+  name        String?
+  email       String?
+  status      String   @default("Open")
+  priority    String   @default("Medium")
+  createdAt   DateTime @default(now())
+}
+
+model TradeProgram {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  status      String
+  budget      Float?
+  createdAt   DateTime @default(now())
+}
+
+model PriceHistory {
+  id          Int      @id @default(autoincrement())
+  productId   Int
+  oldPrice    Float
+  newPrice    Float
+  updatedAt   DateTime @default(now())
+}
+
+model Notification {
+  id               Int      @id @default(autoincrement())
+  title            String
+  message          String
+  audience         String
+  type             String
+  pushNotification Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  userNotifications UserNotification[]
+}
+
+model UserNotification {
+  id             Int          @id @default(autoincrement())
+  userId         Int
+  notificationId Int
+  isRead         Boolean      @default(false)
+  readAt         DateTime?
+  createdAt      DateTime     @default(now())
+
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  notification   Notification @relation(fields: [notificationId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, notificationId])
+}
+
+model SystemSetting {
+  id          Int      @id @default(autoincrement())
+  key         String   @unique
+  value       String
+}
+
+model Region {
+  id      Int      @id @default(autoincrement())
+  name    String   @unique
+  cities  City[]
+}
+
+model City {
+  id        Int      @id @default(autoincrement())
+  name      String
+  regionId  Int
+  region    Region   @relation(fields: [regionId], references: [id], onDelete: Cascade)
+  areas     Area[]
+}
+
+model Area {
+  id        Int      @id @default(autoincrement())
+  name      String
+  cityId    Int
+  city      City     @relation(fields: [cityId], references: [id], onDelete: Cascade)
+}
+
+model ProductCategory {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+}
+
+model ProductBrand {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  mappings  ProductMapping[]
+}
+
+model ProductMapping {
+  id        Int      @id @default(autoincrement())
+  brandId   Int
+  productName String
+  brand     ProductBrand @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@unique([brandId, productName])
+}

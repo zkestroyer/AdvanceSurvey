@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>09_Deployment_SOP.md</title>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 900px; padding: 20px; color: #333; background-color: #f9fafb; }
+        .container { background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #e5e7eb; padding: 12px; text-align: left; }
+        th { background-color: #f3f4f6; font-weight: 600; color: #374151; }
+        code { background-color: #f3f4f6; padding: 3px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; color: #ef4444; }
+        pre { background-color: #1f2937; color: #f8f8f2; padding: 16px; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.9em; }
+        pre code { background-color: transparent; color: inherit; padding: 0; }
+        blockquote { border-left: 4px solid #3b82f6; margin: 0 0 20px 0; padding: 10px 20px; color: #4b5563; background: #eff6ff; border-radius: 0 8px 8px 0; }
+        h1, h2, h3, h4 { color: #111827; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px; margin-top: 32px; }
+        h1 { margin-top: 0; }
+        a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>Phase 9: Deployment SOP</h1>
+<blockquote>
+<p><strong>CRITICAL RULE:</strong> Deployments must be zero-downtime where possible. Never overwrite production databases during a code deployment.</p>
+</blockquote>
+<hr />
+<h2>1. Target Environment Details</h2>
+<ul>
+<li><strong>Live Server IP / Domain:</strong></li>
+<li><strong>Server OS:</strong> (e.g., Ubuntu 22.04)</li>
+<li><strong>Web Server:</strong> (e.g., Nginx, Apache)</li>
+</ul>
+<h2>2. Pre-Deployment Checklist</h2>
+<ul>
+<li>[ ] UAT Sign-off completed (Phase 8).</li>
+<li>[ ] Production database backed up.</li>
+<li>[ ] <code>.env</code> file for production configured with correct keys (DB, SMTP, Stripe).</li>
+<li>[ ] Debug mode / Development errors turned OFF.</li>
+</ul>
+<h2>3. Deployment Steps</h2>
+<p><em>Step-by-step commands or processes to deploy.</em>
+1. <code>ssh user@live-server</code>
+2. <code>cd /var/www/project</code>
+3. <code>git pull origin main</code>
+4. <code>npm install --production</code> (or <code>composer install --no-dev</code>)
+5. <code>npm run build</code>
+6. <code>pm2 restart app-name</code> (or restart Nginx)</p>
+<h2>4. Post-Deployment Verification (Smoke Test)</h2>
+<ul>
+<li>[ ] SSL Certificate valid and HTTPS forcing active.</li>
+<li>[ ] Homepage loads successfully.</li>
+<li>[ ] Can log in with a test account.</li>
+<li>[ ] Emails/Notifications are sending correctly.</li>
+</ul>
+<h2>5. Rollback Plan</h2>
+<p><em>If deployment fails, execute these steps immediately:</em>
+1. Revert to previous Git commit: <code>git checkout HEAD^1</code>
+2. Restart services.</p>
+<hr />
+<p><strong>Sign-off:</strong>
+- [ ] DevOps Engineer
+- [ ] Tech Lead</p>
+</div>
+</body>
+</html>

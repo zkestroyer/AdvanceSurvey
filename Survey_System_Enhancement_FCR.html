@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Survey System Enhancement Requirements - FCR</title>
+<style>
+body{font-family:Segoe UI,Arial,sans-serif;background:#f5f7fb;color:#333;line-height:1.6;margin:40px}
+.container{max-width:1100px;margin:auto;background:#fff;padding:40px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+h1{color:#4b2e83;border-bottom:3px solid #4b2e83;padding-bottom:10px}
+h2{color:#4b2e83;margin-top:35px}
+h3{color:#5d4a8d;margin-top:25px}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid #ccc;padding:10px;text-align:left}
+th{background:#ede7f6}
+ul{margin-top:6px}
+.note{background:#f3f0ff;padding:12px;border-left:4px solid #6b46c1}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Survey System Enhancement Requirements</h1>
+<h2>Functional Change Request (FCR)</h2>
+
+<p><strong>Project:</strong> Survey Application<br>
+<strong>Prepared For:</strong> Development Team<br>
+<strong>Date:</strong> 23 July 2026</p>
+
+<h2>1. Brand-wise Product Mapping</h2>
+<h3>Objective</h3>
+<p>Display only the products belonging to the selected brand instead of displaying all products.</p>
+<h3>Existing Behavior</h3>
+<ul><li>All products are currently displayed together regardless of the selected Brand.</li></ul>
+<h3>Required Changes</h3>
+<h3>Web Portal</h3>
+<p>A <strong>Product Mapping</strong> module shall be implemented within the Survey Configuration.</p>
+<ul>
+<li>Configure Product Categories.</li>
+<li>Configure Brands.</li>
+<li>Configure Products.</li>
+<li>Map one or more Products against a Brand.</li>
+<li>Update or remove mappings at any time.</li>
+</ul>
+<p>The mapping shall be maintained according to the Product Catalog configured in the Web Portal.</p>
+<h3>Mobile Application</h3>
+<ul>
+<li>Display Brand after Product Category selection.</li>
+<li>Display only mapped products after Brand selection.</li>
+<li>Unmapped products shall not be displayed.</li>
+</ul>
+
+<h2>2. Dynamic "Other" Option Handling</h2>
+<h3>Objective</h3>
+<p>Provide a configurable mechanism for handling the <strong>"Other"</strong> option across all dropdown fields.</p>
+<h3>Existing Behavior</h3>
+<p>Currently, selecting <strong>"Other"</strong> does not allow users to specify a custom value.</p>
+<h3>Required Changes</h3>
+<p>Whenever an administrator configures a dropdown LOV containing the value <strong>"Other"</strong>, the application shall automatically treat it as a special value.</p>
+<h3>Mobile Application Behavior</h3>
+<ul>
+<li>Selecting <strong>Other</strong> shall automatically display a text field below the dropdown.</li>
+<li>The entered value shall be saved with the survey.</li>
+</ul>
+<div class="note">
+<strong>Technical Note:</strong>
+<ul>
+<li>No additional configuration shall be required.</li>
+<li>The application shall automatically detect the value "Other".</li>
+<li>This behavior shall work for every configurable dropdown.</li>
+</ul>
+</div>
+
+<h2>3. Multiple Product Entry</h2>
+<h3>Objective</h3>
+<p>Allow multiple products to be captured within a single survey.</p>
+<h3>Existing Behavior</h3>
+<p>Only one product can currently be added for each Product Category.</p>
+<h3>Required Changes</h3>
+<ul>
+<li>Users can tap <strong>Add Another Product</strong> after completing a product.</li>
+<li>The same form shall open again.</li>
+<li>Multiple products shall be stored under the same survey as child records.</li>
+</ul>
+<h3>Example Flow</h3>
+<p>Survey → Solar Product 1 → Add Another Product → Solar Product 2 → Add Another Product → Solar Product 3 → Continue Survey</p>
+
+<h2>4. Survey Edit Permissions</h2>
+<h3>Objective</h3>
+<p>Restrict editing rights after survey submission.</p>
+<table>
+<tr><th>Role</th><th>Permissions</th></tr>
+<tr><td>Admin</td><td>View, Edit, Update</td></tr>
+<tr><td>BDM</td><td>View Only</td></tr>
+<tr><td>TSO</td><td>View Only</td></tr>
+<tr><td>All Other Users</td><td>View Only</td></tr>
+</table>
+<p>No user except the Admin shall be allowed to modify submitted survey information.</p>
+
+<h2>5. Comparison Reports</h2>
+<p>A dedicated <strong>Comparison Reports</strong> module shall be developed within the Web Portal.</p>
+
+<h3>Comparison Report Filters</h3>
+<ul>
+<li>Product Category</li><li>Brand</li><li>Product</li><li>Distributor</li><li>Warranty</li><li>IP Rating</li><li>Capacity</li><li>Energy</li><li>Territory</li><li>City</li><li>Area</li><li>Date Range</li><li>Survey Type</li><li>Any future configurable survey field</li>
+</ul>
+
+<h3>Example 1 – Distributor Comparison</h3>
+<table>
+<tr><th>Distributor</th><th>Shop Count</th></tr>
+<tr><td>Distributor A</td><td>250</td></tr>
+<tr><td>Distributor B</td><td>180</td></tr>
+<tr><td>Distributor C</td><td>95</td></tr>
+</table>
+
+<h3>Example 2 – Product Price Comparison</h3>
+<p><strong>Category:</strong> Solar<br>
+<strong>Brand:</strong> Longi vs JA Solar<br>
+<strong>Product:</strong> LR5<br>
+<strong>Comparison Factor:</strong> Purchase Price</p>
+
+<table>
+<tr><th>Brand</th><th>Purchase Price</th><th>Shop Count</th></tr>
+<tr><td>Longi</td><td>Rs. 27,500</td><td>245 Shops</td></tr>
+<tr><td>JA Solar</td><td>Rs. 26,900</td><td>198 Shops</td></tr>
+</table>
+
+<ul>
+<li>Compare Purchase Prices side-by-side.</li>
+<li>View Shop Count.</li>
+<li>Sort Highest to Lowest / Lowest to Highest.</li>
+<li>Drill down to survey records.</li>
+</ul>
+
+<h3>Price History</h3>
+<ul>
+<li>Historical Purchase Prices</li>
+<li>Historical Selling Prices</li>
+<li>Current Purchase Price</li>
+<li>Current Selling Price</li>
+<li>Price Difference</li>
+<li>Price Change Timeline</li>
+<li>Effective Date</li>
+</ul>
+
+<h2>6. Management Portal &amp; Mobile Application</h2>
+<p>The existing Survey Mobile Application shall be reused. No separate mobile application shall be developed.</p>
+<p>A new <strong>Management</strong> role shall be introduced. The same functionality shall be available on both the <strong>Web Portal</strong> and the <strong>Mobile Application</strong>.</p>
+
+<h3>Dashboard</h3>
+<ul>
+<li>KPI Cards</li>
+<li>Interactive Charts</li>
+<li>Graphs</li>
+<li>Territory-wise Performance</li>
+<li>Brand-wise Statistics</li>
+<li>Product-wise Statistics</li>
+<li>Survey Trends</li>
+<li>Distributor Analysis</li>
+</ul>
+
+<h3>Reports</h3>
+<p><strong>Basic Reports</strong></p>
+<ul>
+<li>Shop Reports</li><li>Survey Reports</li><li>Territory Reports</li><li>User Reports</li>
+</ul>
+
+<p><strong>Advanced Reports</strong></p>
+<ul>
+<li>Comparison Reports</li>
+<li>Product Comparison</li>
+<li>Price Comparison</li>
+<li>Price History</li>
+<li>Trend Analysis</li>
+<li>Product Analysis</li>
+<li>Brand Analysis</li>
+<li>Distributor Analysis</li>
+<li>Territory Analysis</li>
+</ul>
+
+<h3>Comparison Engine</h3>
+<p>Management users shall be able to perform the same dynamic comparisons described in Section 5 from both the Web Portal and the Mobile Application.</p>
+
+<ul>
+<li>Compare Products</li>
+<li>Compare Brands</li>
+<li>Compare Distributors</li>
+<li>Compare Purchase Prices</li>
+<li>Compare Selling Prices</li>
+<li>Compare Territories</li>
+<li>Compare Cities</li>
+<li>Compare Product Categories</li>
+<li>Compare any configurable survey field</li>
+</ul>
+
+<p>The comparison results shall support Highest/Lowest sorting, Graphical View, Tabular View, Drill-down into survey records, Historical Pricing Timeline, Historical Price Comparison and Shop Count.</p>
+
+<h2>7. Role &amp; Permission Management Enhancement</h2>
+
+<p>The Role Management module shall maintain independent permission groups for:</p>
+<ul>
+<li>Web Portal Permissions</li>
+<li>Mobile Application Permissions</li>
+<li>Management Permissions</li>
+</ul>
+
+<h3>Web Portal Permissions</h3>
+<ul>
+<li>Dashboard</li><li>Reports</li><li>Comparison Reports</li><li>Survey Management</li><li>Survey Configuration</li><li>Product Mapping</li><li>Masters</li><li>User Management</li><li>Role Management</li>
+</ul>
+
+<h3>Mobile Application Permissions</h3>
+<ul>
+<li>Dashboard</li><li>Survey Submission</li><li>Survey View</li><li>Reports</li><li>Product Capture</li><li>Offline Synchronization</li><li>Location Services</li><li>Notifications</li>
+</ul>
+
+<h3>Management Permissions</h3>
+<ul>
+<li>Dashboard</li>
+<li>KPI Cards</li>
+<li>Interactive Charts</li>
+<li>Graphs</li>
+<li>Shop Reports</li>
+<li>Survey Reports</li>
+<li>Territory Reports</li>
+<li>User Reports</li>
+<li>Comparison Reports</li>
+<li>Product Comparison</li>
+<li>Brand Comparison</li>
+<li>Distributor Comparison</li>
+<li>Price Comparison</li>
+<li>Price History</li>
+<li>Territory Analysis</li>
+<li>Trend Analysis</li>
+<li>Historical Pricing</li>
+</ul>
+
+<p>Management permissions shall be assignable independently for both the Web Portal and the Mobile Application. The permission engine shall support assigning any combination of Web Portal, Mobile Application and Management permissions independently.</p>
+
+</div>
+</body>
+</html>

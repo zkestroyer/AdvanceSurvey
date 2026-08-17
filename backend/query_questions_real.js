@@ -1,0 +1,14 @@
+const { NodeSSH } = require('node-ssh');
+const ssh = new NodeSSH();
+
+ssh.connect({
+  host: '172.104.130.208',
+  username: 'master-94099776',
+  password: 'j0PhbaxkNl0ORIH',
+  port: 2722
+}).then(() => {
+  return ssh.execCommand('mysql -u master-94099776 -p"cJjuiLp3NFMXiJh0xqeOe" atsolar_db -e "SELECT id, questionText, type, sectionId FROM SurveyQuestion WHERE questionText LIKE \'%Contact%\';"');
+}).then(res => {
+  console.log("QUESTIONS:\n", res.stdout);
+  ssh.dispose();
+});

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>15_Disaster_Recovery_Incident_Plan.md</title>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 900px; padding: 20px; color: #333; background-color: #f9fafb; }
+        .container { background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #e5e7eb; padding: 12px; text-align: left; }
+        th { background-color: #f3f4f6; font-weight: 600; color: #374151; }
+        code { background-color: #f3f4f6; padding: 3px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; color: #ef4444; }
+        pre { background-color: #1f2937; color: #f8f8f2; padding: 16px; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.9em; }
+        pre code { background-color: transparent; color: inherit; padding: 0; }
+        blockquote { border-left: 4px solid #3b82f6; margin: 0 0 20px 0; padding: 10px 20px; color: #4b5563; background: #eff6ff; border-radius: 0 8px 8px 0; }
+        h1, h2, h3, h4 { color: #111827; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px; margin-top: 32px; }
+        h1 { margin-top: 0; }
+        a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>Disaster Recovery (DR) &amp; Incident Response Plan</h1>
+<h2>1. Incident Response Roles</h2>
+<ul>
+<li><strong>Incident Commander:</strong> (Who takes charge during an outage)</li>
+<li><strong>Communications Lead:</strong> (Who updates the client/users)</li>
+<li><strong>Technical Lead:</strong> (Who fixes the issue)</li>
+</ul>
+<h2>2. Incident Classification Matrix</h2>
+<ul>
+<li><strong>Tier 1 (Critical):</strong> Complete system outage, data breach. (Response SLA: 15 mins)</li>
+<li><strong>Tier 2 (High):</strong> Core functionality broken (e.g., checkout failed). (Response SLA: 1 hour)</li>
+<li><strong>Tier 3 (Medium/Low):</strong> Minor bugs, cosmetic issues. (Response SLA: 24 hours)</li>
+</ul>
+<h2>3. Disaster Recovery Procedures</h2>
+<h3>Scenario A: Database Corruption / Loss</h3>
+<ol>
+<li>Identify the exact time of corruption.</li>
+<li>Stop all write operations to the database.</li>
+<li>Retrieve the latest automated snapshot from AWS/Cloud provider.</li>
+<li>Restore to a staging environment and verify integrity.</li>
+<li>Swap production database connection to the restored instance.</li>
+</ol>
+<h3>Scenario B: Server/Infrastructure Failure</h3>
+<ol>
+<li>Auto-scaling triggers should handle minor node failures.</li>
+<li>If region-wide outage, initiate failover to the secondary region.</li>
+<li>Update DNS routing (Route53/Cloudflare) to point to the secondary region.</li>
+</ol>
+<h3>Scenario C: Security Breach / Ransomware</h3>
+<ol>
+<li>Immediately isolate the affected servers (cut external access).</li>
+<li>Identify the compromised entry point.</li>
+<li>Patch the vulnerability.</li>
+<li>Restore clean infrastructure from Infrastructure-as-Code (Terraform/Ansible) templates.</li>
+<li>Notify clients and authorities as per legal compliance.</li>
+</ol>
+<h2>4. Backup Strategy Details</h2>
+<ul>
+<li><strong>RPO (Recovery Point Objective):</strong> [e.g., 1 hour data loss max]</li>
+<li><strong>RTO (Recovery Time Objective):</strong> [e.g., 4 hours to be back online]</li>
+<li><strong>Backup Frequency:</strong> [e.g., Hourly DB snapshots, daily full backups]</li>
+<li><strong>Retention Period:</strong> [e.g., 30 days]</li>
+</ul>
+<h2>5. Post-Incident Review</h2>
+<ul>
+<li>Root Cause Analysis (RCA) to be conducted within 48 hours of resolution and documented in Template 17.</li>
+</ul>
+</div>
+</body>
+</html>

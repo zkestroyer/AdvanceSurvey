@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>20_AI_Playwright_Automation_Specs.md</title>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 900px; padding: 20px; color: #333; background-color: #f9fafb; }
+        .container { background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #e5e7eb; padding: 12px; text-align: left; }
+        th { background-color: #f3f4f6; font-weight: 600; color: #374151; }
+        code { background-color: #f3f4f6; padding: 3px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; color: #ef4444; }
+        pre { background-color: #1f2937; color: #f8f8f2; padding: 16px; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.9em; }
+        pre code { background-color: transparent; color: inherit; padding: 0; }
+        blockquote { border-left: 4px solid #3b82f6; margin: 0 0 20px 0; padding: 10px 20px; color: #4b5563; background: #eff6ff; border-radius: 0 8px 8px 0; }
+        h1, h2, h3, h4 { color: #111827; border-bottom: 1px solid #e5e7eb; padding-bottom: 8px; margin-top: 32px; }
+        h1 { margin-top: 0; }
+        a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>AI-Automated QA &amp; Playwright Execution Log</h1>
+<p>This document tracks the configuration, OpenAI prompts, and execution logs for our automated Quality Assurance pipeline using Playwright and OpenAI. This ensures every project is consistently tested by an AI QA Agent without human bias or error.</p>
+<h2>1. Automation Configuration</h2>
+<ul>
+<li><strong>Testing Framework:</strong> Playwright (E2E Testing)</li>
+<li><strong>AI Evaluator:</strong> OpenAI (Vision/DOM Analysis)</li>
+<li><strong>Target Environments:</strong> Staging / Pre-Production</li>
+</ul>
+<h2>2. OpenAI QA Evaluation Prompts</h2>
+<p>Document the exact prompts used by the AI to evaluate Playwright screenshots or DOM snapshots.
+- <strong>Scenario A (e.g., UI Regression &amp; Layout):</strong> 
+  - <em>Prompt:</em> "Analyze this screenshot of the dashboard. Verify if all charts are rendering properly, text is legible, and there are no overlapping elements."
+- <strong>Scenario B (e.g., Error Handling):</strong>
+  - <em>Prompt:</em> "Check the provided DOM snapshot for the login page. Are there any visible red error banners indicating an 'Invalid Credentials' state?"</p>
+<h2>3. Playwright Scenarios Map</h2>
+<p>List the automated scripts running in the CI/CD pipeline.
+- <code>tests/e2e/auth.spec.ts</code> -&gt; Validates user login, registration, and password reset.
+- <code>tests/e2e/checkout.spec.ts</code> -&gt; Validates add-to-cart, payment gateway mock, and order success.</p>
+<h2>4. Execution &amp; AI Verification Log</h2>
+<p>Record the results of the automated AI test runs. This must be updated continuously during active development.</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Build / Commit</th>
+<th>Scenario Tested</th>
+<th>AI Verdict (Pass/Fail)</th>
+<th>AI Observations / Bugs Found</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>5. Script Maintenance Notes</h2>
+<ul>
+<li>Log any updates needed to the Playwright scripts when the UI or Architecture changes (Ensure these align with Change Requests in Template 13).</li>
+</ul>
+</div>
+</body>
+</html>

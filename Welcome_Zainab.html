@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Project, Zainab!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --bg-color: #f8fafc;
+            --panel-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0e7ff 100%);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: var(--panel-bg);
+            border-radius: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            max-width: 800px;
+            width: 90%;
+            padding: 40px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin: 0 0 10px 0;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .content-section {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .content-section h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .prompt-box {
+            background: #1e293b;
+            color: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            font-family: monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Confetti Effect */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #facc15;
+            opacity: 0.6;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to the Project, Zainab! 🎉</h1>
+            <p>I'm handing over the <strong>Advance Telecom Survey System</strong> to you.<br>It's an amazing system with a Web Dashboard, Mobile App, and a robust Backend!</p>
+        </div>
+
+        <div class="content-section">
+            <h2><span class="emoji">🚀</span> What's in this Package?</h2>
+            <p style="margin-bottom: 0;">In this zip file, you will find:</p>
+            <ul style="margin-top: 10px; color: var(--text-muted); line-height: 1.6;">
+                <li><strong>Backend:</strong> A Node.js API with Prisma ORM.</li>
+                <li><strong>Frontend:</strong> A beautiful React dashboard.</li>
+                <li><strong>Mobile App:</strong> A Flutter app for the sales team.</li>
+                <li><strong>Database Dump:</strong> `db_dump.sql` to get you started instantly.</li>
+                <li><strong>Documentation:</strong> `Project_System_Details.md` containing all technical setup steps.</li>
+            </ul>
+        </div>
+
+        <div class="content-section" style="background: #eff6ff; border-color: #bfdbfe;">
+            <h2 style="color: #1d4ed8;"><span class="emoji">🤖</span> Your AI Prompt</h2>
+            <p style="color: #3b82f6; margin-bottom: 15px;">Copy the prompt below and paste it to your Antigravity AI along with the ZIP file. It will handle the entire setup for you!</p>
+            
+            <div class="prompt-box">
+                <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+                <div id="promptText">Hello Antigravity, I am taking over the "Advance Telecom Survey System" project. 
+Please extract the provided ZIP file and review the "Project_System_Details.md" file to understand the architecture.
+
+CRITICAL INSTRUCTIONS FOR YOU:
+1. Setup the project locally for me according to the instructions in the markdown file.
+2. We need to maintain a file named `return_to_owner.md` in the root directory. Whenever you implement a new feature, fix a major bug, alter the database schema, or make any architectural decision, you MUST append a detailed log of that change to `return_to_owner.md`. This is critical so that when I hand this project back to the original owner, they can read this single file to understand exactly what was changed and why.
+3. Keep your code clean, modular, and always ensure the mobile app API URLs sync with the backend correctly. Let's get to work!</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Wishing you the best of luck with this project! Happy Coding! ✨</p>
+        </div>
+    </div>
+
+    <script>
+        function copyPrompt(btn) {
+            const text = document.getElementById('promptText').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = 'Copied!';
+                btn.style.background = '#10b981';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.background = 'var(--primary)';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
