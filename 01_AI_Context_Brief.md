@@ -46,7 +46,28 @@ The platform consists of three main components:
    - **Role:** Android/iOS app used by TSOs to conduct offline/online surveys, capture GPS locations, and take photos. Also contains an Executive shell for Admins to view dashboards and comparison reports.
    - **Important Notes:** Uses Riverpod/Provider for state management. Uses `fl_chart` for graphs and `percent_indicator` for KPIs. The UI strictly follows a Glassmorphism theme (`GlassContainer`, `GlassButton`) defined in `/lib/theme/glassmorphism.dart`.
 
-## 2. Production Environment & Deployment (Demo Server)
+## 2. Local Environment Setup (For Developers & AI Agents)
+To run this project locally on a new machine:
+
+1. **Database (MySQL):**
+   - Ensure a local MySQL server is running.
+   - Create a database named `atsolar_db`.
+   - Import the provided `db_dump.sql` to restore the schema and mock data: `mysql -u root -p atsolar_db < db_dump.sql`
+2. **Backend:**
+   - Navigate to `/backend` and run `npm install`.
+   - Create a `.env` file with: `DATABASE_URL="mysql://<user>:<pass>@localhost:3306/atsolar_db"` and `JWT_SECRET="advance_telecom_super_secret_key_2023"`.
+   - Run `npx prisma db push` to ensure schema is synced.
+   - Run `npm run dev` to start the backend on port 4000.
+3. **Frontend:**
+   - Navigate to `/frontend` and run `npm install`.
+   - Edit `/frontend/src/services/api.ts` to set `baseURL: 'http://localhost:4000/api/v1'`.
+   - Run `npm run dev`.
+4. **Mobile App:**
+   - Navigate to `/advance_telecom_app` and run `flutter pub get`.
+   - Update API `baseUrl` in `/lib/services/auth_service.dart` and `executive_service.dart` to point to the local machine's IP (e.g., `http://192.168.1.X:4000/api/v1`).
+   - Run on emulator/device via `flutter run`.
+
+## 3. Production Environment & Deployment (Demo Server)
 The live demo is hosted on a remote server running NGINX and PM2.
 - **Server IP:** `172.104.130.208`
 - **SSH Port:** `2722`
